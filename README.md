@@ -1,9 +1,10 @@
 # Stylus Death Star Mixin
 A stylus mixin that makes a single element death star. You can still add your own styles afterwards but changing some things might make it display incorrectly.
 
-It comes in two types, normal and strict:
+It comes in three types, normal, strict and minimal :
 - Normal lets you apply any styles to it, even if makes it display incorrectly
-- Strict overrides your styles in favor of the ones in the mixin
+- Strict overrides your styles in favor of the ones in the mixin, I recommend not using this unless you have to
+- Minimal is recommended for those who know what they're doing, it doesn't override the styles or omit the unnecesarry ones, your output will be much messier
 
 ### How to use:
 
