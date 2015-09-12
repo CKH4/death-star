@@ -1,0 +1,50 @@
+/*
+Stylus Death Star Mixin (C)CKH4 2015
+
+This file is part of normal.stylus.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+death-star(size)
+  width (size / 1.5)
+  height size
+  background #e
+  border-radius 50%
+  border solid #c
+  border-width 0 (size / 3) 0 0
+  box-shadow 0 (- size / 15) rgba(#b, .3) inset
+  display inline-block
+  &:before
+    content ''
+    display block
+    width (size / 6)
+    height (size / 6)
+    background #d
+    border-radius 100%
+    position relative
+    top (size / 6)
+    left (size / 5)
+    border (size / 60) solid #b
+    box-shadow (- size / 15) 0 rgba(#b, .3) inset
+  &:after
+    content ''
+    display block
+    width 'calc(%s - 1px)' % (size)
+    height (size / 37.5)
+    margin-top (- (@height / 2) - (size / 6) - (size / 30))
+    background rgba(#b, .7)
+    position relative
+    top 50%
+    box-shadow 0 (size / 60) (size / 60) (- size / 60) rgba(#9, .5) inset
+/* end of mixin */
