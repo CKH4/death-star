@@ -1,0 +1,53 @@
+/*
+Stylus Death Star Mixin
+  (C)CKH4 2015
+
+This file is part of strict.stylus.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+death-star(size)
+  width (size / 1.5) !important
+  height size !important
+  background #e !important
+  border-radius 50% !important
+  border solid #c !important
+  border-width 0 (size / 3) 0 0 !important
+  box-shadow 0 (- size / 15) rgba(#b, .3) inset !important
+  display inline-block !important
+  &:before
+    content '' !important
+    display block !important
+    width (size / 6) !important
+    height (size / 6) !important
+    background #d !important
+    border-radius 100% !important
+    position relative !important
+    top (size / 6) !important
+    left (size / 5) !important
+    border (size / 60) solid #b !important
+    box-shadow (- size / 15) 0 rgba(#b, .3) inset !important
+  &:after
+    content '' !important
+    display block !important
+    width 'calc(%s - 1px)' % (size) !important
+    height (size / 37.5) !important
+    margin-top (- (@height / 2) - (size / 6) - (size / 30)) !important
+    background rgba(#b, .7) !important
+    position relative !important
+    top 50% !important
+    box-shadow 0 (size / 60) (size / 60) (- size / 60) rgba(#9, .5) inset !important
+
+/* end of mixin */
