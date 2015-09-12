@@ -1,0 +1,44 @@
+////////////////////////////////////////
+//          Death Star Mixin          //
+//                CKH4                //
+//                                    //
+//      please give credit if due     //
+//   preferably something that the    //
+//             user can see           //
+//      (but it doesn't matter)       //
+////////////////////////////////////////
+death-star(size)
+  width (size / 1.5)
+  height size
+  background #e
+  border-radius 50%
+  border solid #c
+  border-width 0 (size / 3) 0 0
+  box-shadow 0 (- size / 15) rgba(#b, .3) inset
+  display inline-block
+  &:before
+    content ''
+    display block
+    width (size / 6)
+    height (size / 6)
+    background #d
+    border-radius 100%
+    position relative
+    top (size / 6)
+    left (size / 5)
+    border (size / 60) solid #b
+    box-shadow (- size / 15) 0 rgba(#b, .3) inset
+  &:after
+    content ''
+    display block
+    width 'calc(%s - 1px)' % (size)
+    height (size / 37.5)
+    margin-top (- (@height / 2) - (size / 6) - (size / 30))
+    background rgba(#b, .7)
+    position relative
+    top 50%
+    box-shadow 0 (size / 60) (size / 60) (- size / 60) rgba(#9, .5) inset
+
+////////////////////////////////////////
+///////////// end of mixin /////////////
+////////////////////////////////////////
