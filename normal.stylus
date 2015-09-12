@@ -1,0 +1,53 @@
+/*
+Stylus Death Star Mixin
+  (C)CKH4 2015
+
+This file is part of normal.stylus.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+death-star(size)
+  width (size / 1.5) unless @width
+  height size unless @height
+  background #e unless @background
+  border-radius 50% unless @border-radius
+  border solid #c unless @border
+  border-width 0 (size / 3) 0 0 unless @border-width
+  box-shadow 0 (- size / 15) rgba(#b, .3) inset unless @box-shadow
+  display inline-block unless @display
+  &:before
+    content '' unless @content
+    display block unless @display
+    width (size / 6) unless @width
+    height (size / 6) unless @height
+    background #d unless @background
+    border-radius 100% unless @border-radius
+    position relative unless @position
+    top (size / 6) unless @top
+    left (size / 5) unless @left
+    border (size / 60) solid #b unless @border
+    box-shadow (- size / 15) 0 rgba(#b, .3) inset unless @box-shadow
+  &:after
+    content '' unless @content
+    display block unless @display
+    width 'calc(%s - 1px)' % (size) unless @width
+    height (size / 37.5) unless @height
+    margin-top (- (@height / 2) - (size / 6) - (size / 30)) unless @margin-top
+    background rgba(#b, .7) unless @background
+    position relative unless @position
+    top 50% unless @top
+    box-shadow 0 (size / 60) (size / 60) (- size / 60) rgba(#9, .5) inset unless @box-shadow
+
+/* end of mixin */
